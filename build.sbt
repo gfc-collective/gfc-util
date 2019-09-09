@@ -4,7 +4,7 @@ name := "gfc-util"
 
 organization := "com.gilt"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.12.9"
 
 crossScalaVersions := Seq(scalaVersion.value)
 
@@ -14,10 +14,10 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 libraryDependencies ++= Seq(
   "com.gilt" %% "gfc-collection" % "0.0.5",
-  "commons-codec" % "commons-codec" % "1.11",
+  "commons-codec" % "commons-codec" % "1.13",
   "com.gilt" %% "gfc-time" % "0.0.7" % Test,
-  "org.scalatest" %% "scalatest" % "3.0.7" % Test,
-  "org.scalacheck" %% "scalacheck" % "1.13.5" % Test,
+  "org.scalatest" %% "scalatest" % "3.0.8" % Test,
+  "org.scalacheck" %% "scalacheck" % "1.14.0" % Test,
   "org.mockito" % "mockito-core" % "3.0.0" % Test
 )
 
