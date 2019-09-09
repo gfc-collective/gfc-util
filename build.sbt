@@ -14,7 +14,7 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 libraryDependencies ++= Seq(
   "com.gilt" %% "gfc-collection" % "0.0.5",
-  "commons-codec" % "commons-codec" % "1.11",
+  "commons-codec" % "commons-codec" % "1.13",
   "com.gilt" %% "gfc-time" % "0.0.7" % Test,
   "org.scalatest" %% "scalatest" % "3.0.8" % Test,
   "org.scalacheck" %% "scalacheck" % "1.14.0" % Test,
