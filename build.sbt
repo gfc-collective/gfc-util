@@ -43,14 +43,14 @@ publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
 
-licenses := Seq("Apache-style" -> url("https://raw.githubusercontent.com/gilt/gfc-util/master/LICENSE"))
+licenses := Seq("Apache-style" -> url("https://raw.githubusercontent.com/gfc-collective/gfc-util/master/LICENSE"))
 
-homepage := Some(url("https://github.com/gilt/gfc-util"))
+homepage := Some(url("https://github.com/gfc-collective/gfc-util"))
 
 pomExtra := (
   <scm>
-    <url>https://github.com/gilt/gfc-util.git</url>
-    <connection>scm:git:git@github.com:gilt/gfc-util.git</connection>
+    <url>https://github.com/gfc-collective/gfc-util.git</url>
+    <connection>scm:git:git@github.com:gfc-collective/gfc-util.git</connection>
   </scm>
   <developers>
     <developer>
@@ -70,4 +70,3 @@ pomExtra := (
     </developer>
   </developers>
 )
-
