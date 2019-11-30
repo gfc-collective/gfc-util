@@ -2,11 +2,12 @@ package com.gilt.gfc.util
 
 import java.util.concurrent.atomic.AtomicInteger
 
-import org.scalatest.{Matchers, FunSuite}
 import scala.collection.immutable.VectorBuilder
 import scala.concurrent.duration._
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class RetryTest extends FunSuite with Matchers {
+class RetryTest extends AnyFunSuite with Matchers {
   implicit def logSuppressor(t: Throwable): Unit = {}
   def succeedF: String = "yay"
   def failF1: String = throw new RuntimeException("boom")

@@ -2,9 +2,10 @@ package com.gilt.gfc.util
 
 import java.util.UUID
 import java.util.concurrent.atomic.AtomicInteger
-import org.scalatest.{Matchers, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class SingletonCacheTest extends FunSuite with Matchers {
+class SingletonCacheTest extends AnyFunSuite with Matchers {
   test("SingletonCache") {
     def makeCounters = new scala.collection.mutable.HashMap[String, AtomicInteger]() {
       override def default(k: String): AtomicInteger = {

@@ -1,8 +1,9 @@
 package com.gilt.gfc.util.types
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class TBoolTest extends FunSuite with Matchers {
+class TBoolTest extends AnyFunSuite with Matchers {
   test("compiles") {
     implicitly[TTrue =:= TTrue]
     implicitly[TFalse =:= TFalse]
