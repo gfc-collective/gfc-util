@@ -18,7 +18,7 @@ libraryDependencies ++= Seq(
   "com.gilt" %% "gfc-time" % "0.0.7" % Test,
   "org.scalatest" %% "scalatest" % "3.1.0" % Test,
   "org.scalacheck" %% "scalacheck" % "1.14.2" % Test,
-  "org.mockito" % "mockito-core" % "3.1.0" % Test
+  "org.mockito" % "mockito-core" % "3.2.0" % Test
 )
 
 ScoverageKeys.coverageFailOnMinimum := true
