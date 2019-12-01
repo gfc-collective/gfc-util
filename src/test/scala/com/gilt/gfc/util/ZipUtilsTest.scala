@@ -1,8 +1,9 @@
 package com.gilt.gfc.util
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class ZipUtilsTest extends FunSuite with Matchers {
+class ZipUtilsTest extends AnyFunSuite with Matchers {
   
   private val stuff = Array[String]("Ciao", "Hello", "master", "originators", "GILT")
 

@@ -1,8 +1,9 @@
 package com.gilt.gfc.util.types
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class DrinkBuilderTest extends FunSuite with Matchers {
+class DrinkBuilderTest extends AnyFunSuite with Matchers {
   test("can build a cuba libre (whisky & coke)") {
     val drink = DrinkBuilder().withWhisky().withCoke().withGlass(Tall).asDouble().build()
 

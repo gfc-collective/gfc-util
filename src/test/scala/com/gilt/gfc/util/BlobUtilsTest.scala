@@ -2,9 +2,10 @@ package com.gilt.gfc.util
 
 import java.util.UUID
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class BlobUtilsTest extends FunSuite with Matchers {
+class BlobUtilsTest extends AnyFunSuite with Matchers {
 
   private val uuids = for (i <- 1 until 23) yield { java.util.UUID.randomUUID } 
   private val longs = new Array[Long](uuids.size * 2)

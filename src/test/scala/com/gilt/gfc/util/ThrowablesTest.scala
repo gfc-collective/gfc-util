@@ -4,9 +4,10 @@ import scala.util.Failure
 import scala.util.Success
 import scala.util.Try
 
-import org.scalatest.{Matchers, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class ThrowablesTest extends FunSuite with Matchers {
+class ThrowablesTest extends AnyFunSuite with Matchers {
   test("null throws NPE") {
     a[NullPointerException] shouldBe thrownBy(Throwables.rootCause(null))
   }

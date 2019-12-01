@@ -2,9 +2,10 @@ package com.gilt.gfc.util
 
 import java.util.concurrent.{TimeUnit, CountDownLatch}
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class ExponentialBackoffTest extends FunSuite with Matchers {
+class ExponentialBackoffTest extends AnyFunSuite with Matchers {
   test("loopWithBackoffOnErrorWhile") {
     new ExponentialBackoff {
       override def error(ex: Throwable) = {}

@@ -4,11 +4,11 @@ import java.io.{FileOutputStream, File}
 import java.net.URL
 import java.util.jar.{Attributes, Manifest => JManifest}
 
-import org.scalatest.FunSuite
-import org.scalatest.mockito.MockitoSugar
 import org.mockito.Mockito._
+import org.scalatestplus.mockito.MockitoSugar
+import org.scalatest.funsuite.AnyFunSuite
 
-class VersionUtilTest extends FunSuite with MockitoSugar {
+class VersionUtilTest extends AnyFunSuite with MockitoSugar {
 
   test("Happy Flow") {
     val util = new VersionUtil {

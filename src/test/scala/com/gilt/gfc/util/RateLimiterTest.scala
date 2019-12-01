@@ -2,10 +2,11 @@ package com.gilt.gfc.util
 
 import java.util.concurrent.CountDownLatch
 
-import org.scalatest.{Matchers, FunSuite}
-import org.scalatest.prop.Checkers
+import org.scalatestplus.scalacheck.Checkers
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class RateLimiterTest extends FunSuite with Checkers with Matchers {
+class RateLimiterTest extends AnyFunSuite with Checkers with Matchers {
 
   test("Basics") {
     val seconds = 2   // < 2 seconds is not so great for the 1hz limiter
