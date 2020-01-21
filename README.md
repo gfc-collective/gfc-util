@@ -1,19 +1,21 @@
 # gfc-util [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.gfccollective/gfc-util_2.12/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/org.gfccollective/gfc-util_2.12) [![Build Status](https://travis-ci.org/gilt/gfc-util.svg?branch=master)](https://travis-ci.org/gilt/gfc-util) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-util/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-util?branch=master) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A library that contains a few scala utility classes. Part of the [Gilt Foundation Classes](https://github.com/saksdirect?q=gfc).
+A library that contains a few scala utility classes.
+A fork and new home of the former Gilt Foundation Classes (`com.gilt.gfc`), now called the [GFC Collective](https://github.com/gfc-collective), maintained by some of the original authors.
+
 
 ## Getting gfc-util
 
-The latest version is 0.2.2, which is cross-built against Scala 2.10.x, 2.11.x and 2.12.x.
+The latest version is 1.0.0, which is cross-built against Scala 2.12.x and 2.13.x.
 
 If you're using SBT, add the following line to your build file:
 
 ```scala
-libraryDependencies += "org.gfccollective" %% "gfc-util" % "0.2.2"
+libraryDependencies += "org.gfccollective" %% "gfc-util" % "1.0.0"
 ```
 
-For Maven and other build tools, you can visit [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Corg.gfccollective%20gfc).
-(This search will also list other available libraries from the gilt fundation classes.)
+For Maven and other build tools, you can visit [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Corg.gfccollective).
+(This search will also list other available libraries from the GFC Collective.)
 
 ## Contents and Example Usage
 
@@ -25,7 +27,7 @@ Allows a retry of a potentially failing function with or without an exponentiall
 def inputNumber: Int = ???
 
 // Retry the function up to 10 times or until it succeeds
-val number: Int = retry(10)(inputNumber)
+val number: Int = Retry.retry(10)(inputNumber)
 ```
 ```scala
 // some potentially failing function
@@ -34,12 +36,12 @@ def readFile: Seq[String] = ???
 // Retry the function up to 10 times until it succeeds, with an exponential backoff,
 // starting at 10 ms and doubling each iteration until it reaches 1 second, i.e.
 // 10ms, 20ms, 40ms, 80ms, 160ms, 320ms, 640ms, 1s, 1s, 1s
-val contents: Seq[String] = retryWithExponentialDelay(maxRetryTimes = 10,
-                                                      maxRetryTimeout = 5 minutes fromNow,
-                                                      initialDelay = 10 millis,
-                                                      maxDelay = 1 second,
-                                                      exponentFactor = 2)
-                                                     (readFile)
+val contents: Seq[String] = Retry.retryWithExponentialDelay(maxRetryTimes = 10,
+                                                            maxRetryTimeout = 5.minutes.fromNow,
+                                                            initialDelay = 10.millis,
+                                                            maxDelay = 1.second,
+                                                            exponentFactor = 2)
+                                                           (readFile)
 ```
 
 Allows a retry of a function `I => O` via a function `I => Either[I, O]`:
@@ -71,13 +73,13 @@ def func(a: Array[Boolean]): Either[Array[Boolean], String] = {
   }
 }
 
-val result: String = retryFoldWithExponentialDelay(maxRetryTimes = 10,
-                                                   maxRetryTimeout = 5 minutes fromNow,
-                                                   initialDelay = 10 millis,
-                                                   maxDelay = 1 second,
-                                                   exponentFactor = 2)
-                                                  (arr)
-                                                  (func)
+val result: String = Retry.retryFoldWithExponentialDelay(maxRetryTimes = 10,
+                                                         maxRetryTimeout = 5.minutes.fromNow,
+                                                         initialDelay = 10.millis,
+                                                         maxDelay = 1.second,
+                                                         exponentFactor = 2)
+                                                        (arr)
+                                                        (func)
 ```
 
 
@@ -122,6 +124,5 @@ t should be theSameInstanceAs e1
 ```
 
 ## License
-Copyright 2019
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
