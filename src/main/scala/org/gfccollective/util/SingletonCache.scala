@@ -26,6 +26,6 @@ class SingletonCache[K] {
 
   def values[V]: Iterable[V] = instanceCache.values.asScala.map(_.asInstanceOf[V])
 
-  def asMap[V]: Map[K, V] = instanceCache.asScala.mapValues(_.asInstanceOf[V])
+  def asMap[V]: Map[K, V] = instanceCache.asScala.map { case (k, v) => k -> v.asInstanceOf[V] }
 
 }

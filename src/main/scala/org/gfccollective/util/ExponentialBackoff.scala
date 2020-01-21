@@ -64,8 +64,8 @@ trait ExponentialBackoff {
   protected[this] final def retryUpTo[T](maxTryTimes: Long)
                                         (operation: => T): T = {
     Retry.retryWithExponentialDelay(maxRetryTimes = maxTryTimes - 1,
-                                    initialDelay = backoffMinTimeMs millis,
-                                    maxDelay = backoffMaxTimeMs millis)(
+                                    initialDelay = backoffMinTimeMs.millis,
+                                    maxDelay = backoffMaxTimeMs.millis)(
                                     operation)(
                                     error)
   }

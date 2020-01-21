@@ -82,8 +82,8 @@ class RetryTest extends AnyFunSuite with Matchers {
     times += System.currentTimeMillis()
 
     // Delay series should be (ms): 100, 150, 225, 337, 500, 500
-    Retry.retryWithExponentialDelay(initialDelay = 100 millis,
-                                    maxDelay = 500 millis,
+    Retry.retryWithExponentialDelay(initialDelay = 100.millis,
+                                    maxDelay = 500.millis,
                                     exponentFactor = 1.5)(func) shouldBe "ok"
 
     val timeDeltas = times.result().sliding(2).map(v => v(1) - v(0)).toList

@@ -67,7 +67,7 @@ class SingletonCacheTest extends AnyFunSuite with Matchers {
 
     cache("three") { UUID.randomUUID() }
 
-    asMap.size shouldBe 3
+    asMap.size shouldBe 2
     cache.asMap.size shouldBe 3
   }
 }

@@ -89,9 +89,9 @@ object Retry {
     */
   @tailrec
   def retryFoldWithExponentialDelay[I, O](maxRetryTimes: Long = Long.MaxValue,
-                                          maxRetryTimeout: Deadline = 1 day fromNow,
-                                          initialDelay: Duration = 1 millisecond,
-                                          maxDelay: FiniteDuration = 1 day,
+                                          maxRetryTimeout: Deadline = 1.day.fromNow,
+                                          initialDelay: Duration = 1.millisecond,
+                                          maxDelay: FiniteDuration = 1.day,
                                           exponentFactor: Double = 2)
                                          (i: I)
                                          (f: I => Either[I, O])
@@ -143,9 +143,9 @@ object Retry {
    *         If the function throws a fatal Error, it is not retried and the error is rethrown.
    */
   def retryWithExponentialDelay[T](maxRetryTimes: Long = Long.MaxValue,
-                                   maxRetryTimeout: Deadline = 1 day fromNow,
-                                   initialDelay: Duration = 1 millisecond,
-                                   maxDelay: FiniteDuration = 1 day,
+                                   maxRetryTimeout: Deadline = 1.day.fromNow,
+                                   initialDelay: Duration = 1.millisecond,
+                                   maxDelay: FiniteDuration = 1.day,
                                    exponentFactor: Double = 2)
                                   (f: => T)
                                   (implicit log: Throwable => Unit = _.printStackTrace): T =
