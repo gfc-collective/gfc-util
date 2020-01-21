@@ -2,7 +2,7 @@ import scoverage.ScoverageKeys
 
 name := "gfc-util"
 
-organization := "com.gilt"
+organization := "org.gfccollective"
 
 scalaVersion := "2.12.10"
 
@@ -13,10 +13,12 @@ scalacOptions += "-target:jvm-1.8"
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 libraryDependencies ++= Seq(
-  "com.gilt" %% "gfc-collection" % "0.0.5",
+  "org.gfccollective" %% "gfc-collection" % "1.0.0",
   "commons-codec" % "commons-codec" % "1.14",
-  "com.gilt" %% "gfc-time" % "0.0.7" % Test,
+  "org.gfccollective" %% "gfc-time" % "1.0.0" % Test,
   "org.scalatest" %% "scalatest" % "3.1.0" % Test,
+  "org.scalatestplus" %% "scalacheck-1-14" % "3.1.0.1" % Test,
+  "org.scalatestplus" %% "mockito-3-2" % "3.1.0.0" % Test,
   "org.scalacheck" %% "scalacheck" % "1.14.3" % Test,
   "org.mockito" % "mockito-core" % "3.2.4" % Test
 )

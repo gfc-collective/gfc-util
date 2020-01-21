@@ -1,4 +1,4 @@
-package com.gilt.gfc.util
+package org.gfccollective.util
 
 import java.io.InputStream
 import java.net.URL

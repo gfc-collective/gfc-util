@@ -1,4 +1,4 @@
-package com.gilt.gfc.util
+package org.gfccollective.util
 
 /**
  * Church boolean types for use in type-level programming

@@ -1,4 +1,4 @@
-package com.gilt.gfc.util.types
+package org.gfccollective.util.types
 
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers

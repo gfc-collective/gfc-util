@@ -1,4 +1,4 @@
-package com.gilt.gfc.util.types
+package org.gfccollective.util.types
 
 /**
  * Example for a type-safe compile-time checked Builder, using church-encoded boolean types.

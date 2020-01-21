@@ -1,4 +1,4 @@
-package com.gilt.gfc.util
+package org.gfccollective.util
 
 import java.io._
 import java.util.zip.{GZIPInputStream, GZIPOutputStream}

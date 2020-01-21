@@ -1,4 +1,4 @@
-# gfc-util [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.gilt/gfc-util_2.12/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.gilt/gfc-util_2.12) [![Build Status](https://travis-ci.org/gilt/gfc-util.svg?branch=master)](https://travis-ci.org/gilt/gfc-util) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-util/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-util?branch=master) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# gfc-util [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.gfccollective/gfc-util_2.12/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/org.gfccollective/gfc-util_2.12) [![Build Status](https://travis-ci.org/gilt/gfc-util.svg?branch=master)](https://travis-ci.org/gilt/gfc-util) [![Coverage Status](https://coveralls.io/repos/gilt/gfc-util/badge.svg?branch=master&service=github)](https://coveralls.io/github/gilt/gfc-util?branch=master) [![Join the chat at https://gitter.im/gilt/gfc](https://badges.gitter.im/gilt/gfc.svg)](https://gitter.im/gilt/gfc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A library that contains a few scala utility classes. Part of the [Gilt Foundation Classes](https://github.com/saksdirect?q=gfc).
 
@@ -9,15 +9,15 @@ The latest version is 0.2.2, which is cross-built against Scala 2.10.x, 2.11.x a
 If you're using SBT, add the following line to your build file:
 
 ```scala
-libraryDependencies += "com.gilt" %% "gfc-util" % "0.2.2"
+libraryDependencies += "org.gfccollective" %% "gfc-util" % "0.2.2"
 ```
 
-For Maven and other build tools, you can visit [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Ccom.gilt%20gfc).
+For Maven and other build tools, you can visit [search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Corg.gfccollective%20gfc).
 (This search will also list other available libraries from the gilt fundation classes.)
 
 ## Contents and Example Usage
 
-### com.gilt.gfc.util.Retry
+### org.gfccollective.util.Retry
 
 Allows a retry of a potentially failing function with or without an exponentially growing wait period:
 ```scala
@@ -81,7 +81,7 @@ val result: String = retryFoldWithExponentialDelay(maxRetryTimes = 10,
 ```
 
 
-### com.gilt.gfc.util.RateLimiter and com.gilt.gfc.util.ThreadSafeRateLimiter
+### org.gfccollective.util.RateLimiter and org.gfccollective.util.ThreadSafeRateLimiter
 
 RateLimiter can be used to rate-limit calls to a work function, e.g. a function that writes to a db.
 ThreadSafeRateLimiter is a thread safe version of RateLimiter, that synchronizes calls to the limit function.
@@ -93,7 +93,7 @@ def writeObject(obj: DBObject) = rateLimiter.limit {
 }
 ```
 
-### com.gilt.gfc.util.SingletonCache
+### org.gfccollective.util.SingletonCache
 
 A cache for objects that need their lifecycle to be managed and can't be just throw-away,
 e.g. for when ConcurrentHashMap.putIfAbsent(new Something()) may result in a Something
@@ -108,7 +108,7 @@ val is: InputStream = inputStreamCache(file) {
 }
 ```
 
-### com.gilt.gfc.util.Throwables
+### org.gfccollective.util.Throwables
 
 Utility to unwind nested Throwable stacks
 ```scala

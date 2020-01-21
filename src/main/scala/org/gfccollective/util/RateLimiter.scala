@@ -1,7 +1,7 @@
-package com.gilt.gfc.util
+package org.gfccollective.util
 
 import scala.beans.BeanProperty
-import com.gilt.gfc.collection.CircularBuffer
+import org.gfccollective.collection.CircularBuffer
 
 /**
  * Used to rate-limit calls to a work function, e.g. that writes to a db.

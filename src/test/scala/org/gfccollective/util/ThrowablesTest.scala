@@ -1,4 +1,4 @@
-package com.gilt.gfc.util
+package org.gfccollective.util
 
 import scala.util.Failure
 import scala.util.Success
