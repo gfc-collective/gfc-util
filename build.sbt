@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
 
 ScoverageKeys.coverageFailOnMinimum := true
 
-ScoverageKeys.coverageMinimum := 95.7
+ScoverageKeys.coverageMinimum := 96.7
 
 releaseCrossBuild := true
 
