@@ -17,7 +17,7 @@ libraryDependencies ++= Seq(
   "commons-codec" % "commons-codec" % "1.14",
   "org.gfccollective" %% "gfc-time" % "1.0.0" % Test,
   "org.scalatest" %% "scalatest" % "3.2.1" % Test,
-  "org.scalatestplus" %% "scalacheck-1-14" % "3.2.0.0" % Test,
+  "org.scalatestplus" %% "scalacheck-1-14" % "3.2.1.0" % Test,
   "org.scalatestplus" %% "mockito-3-2" % "3.1.2.0" % Test,
   "org.scalacheck" %% "scalacheck" % "1.14.3" % Test,
   "org.mockito" % "mockito-core" % "3.4.6" % Test
