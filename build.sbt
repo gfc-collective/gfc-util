@@ -20,7 +20,7 @@ libraryDependencies ++= Seq(
   "org.scalatestplus" %% "scalacheck-1-14" % "3.2.2.0" % Test,
   "org.scalatestplus" %% "mockito-3-2" % "3.1.2.0" % Test,
   "org.scalacheck" %% "scalacheck" % "1.14.3" % Test,
-  "org.mockito" % "mockito-core" % "3.5.13" % Test
+  "org.mockito" % "mockito-core" % "3.5.15" % Test
 )
 
 ScoverageKeys.coverageFailOnMinimum := true
