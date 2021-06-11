@@ -19,7 +19,7 @@ libraryDependencies ++= Seq(
   "org.scalatestplus" %% "scalacheck-1-15" % "3.2.9.0" % Test,
   "org.scalatestplus" %% "mockito-3-4" % "3.2.9.0" % Test,
   "org.scalacheck" %% "scalacheck" % "1.15.4" % Test,
-  "org.mockito" % "mockito-core" % "3.11.0" % Test
+  "org.mockito" % "mockito-core" % "3.11.1" % Test
 )
 
 releaseCrossBuild := true
