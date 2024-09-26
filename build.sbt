@@ -5,9 +5,18 @@ organization := "org.gfccollective"
 
 scalaVersion := "2.13.10"
 
-crossScalaVersions := Seq(scalaVersion.value, "2.12.17")
+crossScalaVersions := Seq(scalaVersion.value, "2.12.17", "3.1.2")
 
 scalacOptions += "-target:jvm-1.8"
+
+scalacOptions ++= {
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((3, _)) =>
+          Seq("-source:3.0-migration", "-explain", "-explain-types")
+        case _ =>
+          Nil
+      }
+    }
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
